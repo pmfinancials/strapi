@@ -1,0 +1,32 @@
+{
+  "name": "sthirix-cms",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Strapi CMS for Sthirix",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "dependencies": {
+    "@strapi/plugin-cloud": "5.36.0",
+    "@strapi/plugin-users-permissions": "5.36.0",
+    "@strapi/strapi": "5.36.0",
+    "better-sqlite3": "12.4.1",
+    "styled-components": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.5",
+    "typescript": "^5.8.2"
+  },
+  "author": "",
+  "strapi": {
+    "uuid": "1084251f-fe41-4f40-b380-2313ee11d70c"
+  },
+  "engines": {
+    "node": ">=18.0.0 <=22.x.x",
+    "npm": ">=6.0.0"
+  }
+}
+
