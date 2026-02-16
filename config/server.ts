@@ -6,8 +6,8 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Server =>
   app: {
     keys: env.array('APP_KEYS'),
   },
-  url: env('PUBLIC_URL', 'https://cms.sthirix.com'),
-  proxy: true, // Enable proxy mode
+  url: env('PUBLIC_URL'),
+  proxy: env.bool('PROXY', true),
 });
 
 export default config;

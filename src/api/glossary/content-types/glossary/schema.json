@@ -1,0 +1,79 @@
+{
+  "kind": "collectionType",
+  "collectionName": "glossaries",
+  "info": {
+    "singularName": "glossary",
+    "pluralName": "glossaries",
+    "displayName": "Glossary"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Term": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Term"
+    },
+    "Letter": {
+      "type": "enumeration",
+      "enum": [
+        "A, ",
+        "B, ",
+        "C, ",
+        "D, ",
+        "E,",
+        "F, ",
+        "G, ",
+        "H, ",
+        "I, ",
+        "J, ",
+        "K, ",
+        "L, ",
+        "M, ",
+        "N, ",
+        "O, ",
+        "P, ",
+        "Q, ",
+        "R, ",
+        "S,",
+        "T, ",
+        "U, ",
+        "V, ",
+        "W, ",
+        "X, ",
+        "Y, ",
+        "Z"
+      ]
+    },
+    "ShortDefinition": {
+      "type": "text"
+    },
+    "FullDefinition": {
+      "type": "blocks"
+    },
+    "Category": {
+      "type": "enumeration",
+      "enum": [
+        "Finance,",
+        "Technology,",
+        "Business,",
+        "Marketing,",
+        "Trading,",
+        "General"
+      ]
+    },
+    "Order": {
+      "type": "integer"
+    },
+    "MetaTitle": {
+      "type": "string"
+    },
+    "MetaDescription": {
+      "type": "text"
+    }
+  }
+}

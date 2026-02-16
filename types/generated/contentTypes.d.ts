@@ -430,6 +430,113 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
+  collectionName: 'blogs';
+  info: {
+    displayName: 'Blog';
+    pluralName: 'blogs';
+    singularName: 'blog';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    blocks: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    excerpt: Schema.Attribute.Text;
+    Image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'> &
+      Schema.Attribute.Private;
+    MetaDescription: Schema.Attribute.JSON;
+    publishedAt: Schema.Attribute.DateTime;
+    publishedDate: Schema.Attribute.Date;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiGlossaryGlossary extends Struct.CollectionTypeSchema {
+  collectionName: 'glossaries';
+  info: {
+    displayName: 'Glossary';
+    pluralName: 'glossaries';
+    singularName: 'glossary';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Category: Schema.Attribute.Enumeration<
+      [
+        'Finance,',
+        'Technology,',
+        'Business,',
+        'Marketing,',
+        'Trading,',
+        'General',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    FullDefinition: Schema.Attribute.Blocks;
+    Letter: Schema.Attribute.Enumeration<
+      [
+        'A, ',
+        'B, ',
+        'C, ',
+        'D, ',
+        'E,',
+        'F, ',
+        'G, ',
+        'H, ',
+        'I, ',
+        'J, ',
+        'K, ',
+        'L, ',
+        'M, ',
+        'N, ',
+        'O, ',
+        'P, ',
+        'Q, ',
+        'R, ',
+        'S,',
+        'T, ',
+        'U, ',
+        'V, ',
+        'W, ',
+        'X, ',
+        'Y, ',
+        'Z',
+      ]
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::glossary.glossary'
+    > &
+      Schema.Attribute.Private;
+    MetaDescription: Schema.Attribute.Text;
+    MetaTitle: Schema.Attribute.String;
+    Order: Schema.Attribute.Integer;
+    publishedAt: Schema.Attribute.DateTime;
+    ShortDefinition: Schema.Attribute.Text;
+    slug: Schema.Attribute.UID<'Term'>;
+    Term: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -941,6 +1048,8 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::blog.blog': ApiBlogBlog;
+      'api::glossary.glossary': ApiGlossaryGlossary;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
