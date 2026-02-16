@@ -4,7 +4,7 @@ export default (config: UserConfig) => {
   return mergeConfig(config, {
     server: {
       host: true,
-      allowedHosts: ['cms.sthirix.com'],   // 👈 ADD THIS
+      allowedHosts: ['cms.sthirix.com'],
       hmr: {
         clientPort: 443,
         protocol: 'wss',
