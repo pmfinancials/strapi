@@ -7,7 +7,7 @@ const config: Core.Config.Middlewares = [
   {
     name: 'strapi::cors',
     config: {
-      origin: ['http://localhost:5173', 'https://sthirix.vercel.app'],
+      origin: ['http://localhost:1337', 'https://sthirix.vercel.app'],
       credentials: true,
     },
   },

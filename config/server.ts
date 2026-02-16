@@ -6,7 +6,7 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Server =>
   app: {
     keys: env.array('APP_KEYS'),
   },
-  url: 'http://localhost:5173', // Public URL (accessed via Vite proxy)
+  url: 'http://localhost:1337',
   proxy: true, // Enable proxy mode
 });
 
