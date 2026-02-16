@@ -6,7 +6,7 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Server =>
   app: {
     keys: env.array('APP_KEYS'),
   },
-  url: 'http://localhost:1337',
+  url: env('PUBLIC_URL', 'https://cms.sthirix.com'),
   proxy: true, // Enable proxy mode
 });
 
