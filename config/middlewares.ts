@@ -25,7 +25,12 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Middlewar
   'strapi::query',
   'strapi::body',
   'strapi::session',
-  'strapi::favicon',
+  {
+    name: 'strapi::favicon',
+    config: {
+      path: env('PUBLIC_FAVICON_PATH', 'public/favicon.ico'),
+    },
+  },
   'strapi::public',
 ];
 

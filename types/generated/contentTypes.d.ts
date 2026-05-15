@@ -456,6 +456,7 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     MetaDescription: Schema.Attribute.JSON;
     publishedAt: Schema.Attribute.DateTime;
     publishedDate: Schema.Attribute.Date;
+    slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
